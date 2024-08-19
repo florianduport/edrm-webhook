@@ -1,13 +1,11 @@
-const express = require('express');
-const Webhook = require('./models/webhook'); // Assure-toi que le chemin est correct
-const RouterBase = require('./router'); // Assure-toi que le chemin est correct
+const router = require('endurance-core/lib/router').RouterBase({requireDb: true});
+const Webhook = require('../models/webhook.model');
 const auth = require('endurance-core/lib/auth');
 
-const router = RouterBase();
 
 const restrictWebhookAccess = {
-  checkPermissions: auth.checkUserPermissions(['canManageWebhooks']),
-  restrictToOwner: auth.restrictToOwner((req) => req.webhook.userId)
+  checkPermissions: auth.checkUserPermissions(['canManageWebhooks']), // Pass the function reference
+  restrictToOwner: auth.restrictToOwner((req) => req.webhook.userId)  // Pass the function reference
 };
 
 // Utilisation de l'autowire avec les restrictions d'accès

@@ -1,6 +1,6 @@
 const axios = require('axios');
 const { createAnyListener } = require('endurance-core/lib/listener');
-const Webhook = require('./models/webhook'); // Assure-toi que le chemin est correct
+const Webhook = require('../models/webhook.model'); // Assure-toi que le chemin est correct
 
 // Fonction pour appeler les webhooks
 const callWebhook = async (webhook, event, data) => {

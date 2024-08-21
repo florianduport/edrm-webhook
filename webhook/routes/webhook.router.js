@@ -1,5 +1,5 @@
 const router = require('endurance-core/lib/router')({ requireDb: true });
-const auth = require('endurance-core/lib/auth')();
+const auth = require('endurance-core/lib/auth');
 const Webhook = require('../models/webhook.model');
 
 router.autoWire(Webhook, 'Webhook', {

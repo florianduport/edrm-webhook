@@ -1,5 +1,5 @@
 const axios = require('axios');
-const listener = require('endurance-core/lib/listener')();
+const listener = require('endurance-core/lib/listener');
 const Webhook = require('../models/webhook.model');
 
 const callWebhook = async (webhook, event, data) => {

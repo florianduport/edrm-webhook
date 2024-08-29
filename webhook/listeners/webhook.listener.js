@@ -1,6 +1,6 @@
-const axios = require('axios');
-const listener = require('endurance-core/lib/listener');
-const Webhook = require('../models/webhook.model');
+import axios from 'axios';
+import listener from 'endurance-core/lib/listener';
+import Webhook from '../models/webhook.model';
 
 const callWebhook = async (webhook, event, data) => {
     try {
@@ -36,4 +36,4 @@ listener.createAnyListener(async (event, data) => {
 
 console.log('Webhook listener initialized');
 
-module.exports = listener;
+export default listener;
